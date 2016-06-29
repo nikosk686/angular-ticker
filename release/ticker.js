@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('simpleAngularTicker', []).
-directive('ticker', function ($interval, $timeout) {
+directive('ticker', ['$interval', '$timeout', function ($interval, $timeout) {
     return {
 
         restrict: 'A',
@@ -70,7 +70,7 @@ directive('ticker', function ($interval, $timeout) {
                     $interval.cancel(start, 0);
                 });
 
-                /* 
+                /*
                  *author - mayo
                  *checking for mouse enter the ticker region
                  */
@@ -78,7 +78,7 @@ directive('ticker', function ($interval, $timeout) {
                     isHovered = true;
                 });
 
-                /* 
+                /*
                  *author - mayo
                  *checking for mouse exit the ticker region
                  */
@@ -90,4 +90,4 @@ directive('ticker', function ($interval, $timeout) {
         }
 
     };
-});
+}]);
